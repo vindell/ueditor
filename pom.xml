@@ -377,13 +377,17 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<commons-codec.version>1.13</commons-codec.version>
+    	<commons-fileupload.version>1.4</commons-fileupload.version>
 		<commons-lang3.version>3.7</commons-lang3.version>
 		<commons-io.version>2.6</commons-io.version>
 		<commons-beanutils.version>1.9.3</commons-beanutils.version>
+		<fastjson.version>1.2.62</fastjson.version>
 		<java.version>1.8</java.version>
 		<javassist-plus.version>1.0.2.RELEASE</javassist-plus.version>
 		<junit.version>4.12</junit.version>
-		<slf4j.version>1.7.25</slf4j.version>
+ 		<servlet-api.version>3.0.1</servlet-api.version>
+ 		<slf4j.version>1.7.21</slf4j.version>
 		<maven.version>3.0</maven.version>
 		<maven-clean-plugin.version>3.0.0</maven-clean-plugin.version>
 		<maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -413,7 +417,13 @@
 				<artifactId>junit</artifactId>
 				<version>${junit.version}</version>
 			</dependency>
-
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${servlet-api.version}</version>
+			</dependency>
+			
 			<!-- https://mvnrepository.com/artifact/org.slf4j -->
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -426,7 +436,18 @@
 				<version>${slf4j.version}</version>
 				<scope>test</scope>
 			</dependency>
-
+	
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			<!-- apache 上传组件 -->
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
 			<dependency>
 				<groupId>org.apache.commons</groupId>
@@ -445,7 +466,18 @@
 			    <artifactId>commons-beanutils</artifactId>
 			    <version>${commons-beanutils.version}</version>
 			</dependency>
-
+			
+			<!--
+				fastjson 是一个性能很好的 Java 语言实现的 JSON 解析器和生成器，来自阿里巴巴的工程师开发。 主要特点： 快速FAST
+				(比其它任何基于Java的解析器和生成器更快，包括jackson） 强大（支持普通JDK类包括任意Java Bean
+				Class、Collection、Map、Date或enum） 零依赖（没有依赖其它任何类库除了JDK）
+			-->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+			
 			<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 			<dependency>
 			    <groupId>org.springframework</groupId>
